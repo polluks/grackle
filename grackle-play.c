@@ -1804,16 +1804,16 @@ int main(int argc, char **argv)
    char decoded[2048];
 
    header=calloc(1,sizeof(header_struct));
-   assignmemory(dictionary, 255, 65535);
-   assignmemory(verbs,sizeof(word_struct), 255);
-   assignmemory(nouns,sizeof(word_struct), 255);
-   assignmemory(adverbs,sizeof(word_struct), 255);
-   assignmemory(objects,sizeof(object_struct), 255);
-   assignmemory(rooms,sizeof(room_struct), 9999);
-   assignmemory(hpc,sizeof(condition_struct), 512);
-   assignmemory(lpc,sizeof(condition_struct), 512);
-   assignmemory(locc,sizeof(condition_struct), 512);
-   assignmemory(messages, 255, 512);
+   assignmemory((void **) dictionary, 255, 65535);
+   assignmemory((void **) verbs,sizeof(word_struct), 255);
+   assignmemory((void **) nouns,sizeof(word_struct), 255);
+   assignmemory((void **) adverbs,sizeof(word_struct), 255);
+   assignmemory((void **) objects,sizeof(object_struct), 255);
+   assignmemory((void **) rooms,sizeof(room_struct), 9999);
+   assignmemory((void **) hpc,sizeof(condition_struct), 512);
+   assignmemory((void **) lpc,sizeof(condition_struct), 512);
+   assignmemory((void **) locc,sizeof(condition_struct), 512);
+   assignmemory((void **) messages, 255, 512);
 
    while ((opt = getopt(argc, argv, "pls:t:")) != -1)
    {
