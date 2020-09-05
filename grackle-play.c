@@ -1858,7 +1858,7 @@ int main(int argc, char **argv)
    header->type=type;
    if (type == 0)
    {
-      header->type=detecttype(infile, header);
+      header->type=detecttype(infile);
    }
    printf("Type: %d\n",header->type);
    readheader(infile, header);
